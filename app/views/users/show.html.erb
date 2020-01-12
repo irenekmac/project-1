@@ -1,3 +1,24 @@
-<h1>Users </h1>
+<h1> <%= @user.name %> </h1>
 
-<p>User Id: <%= session[:user_id] %></p>
+<%= link_to 'Edit Account', edit_user_path(@user.id) %>
+|
+<%= link_to 'Delete Account', user_path(@user.id), method: 'delete' %>
+
+
+<p><strong>User Type</strong>: <%= @user.user_type %></p>
+<p><strong>Full Name</strong>: <%= @user.name %></p>
+<p><strong>Date of Birth</strong>: <%= @user.dob %></p>
+<p><strong>Height</strong>: <%= @user.height %> cm </p>
+<p><strong>Weight</strong>: <%= @user.weight %> kg </p>
+<p><strong>Email Address</strong>: <%= @user.email %></p>
+<p><strong>Contact Number</strong>: <%= @user.contact %></p>
+<p><strong>Address</strong>: <%= @user.address %></p>
+<p><strong>State</strong>: <%= @user.state %></p>
+<p><strong>Time of Posturing</strong>: <%= @user.time_of_posturing %></p>
+<p><strong>Health Fund</strong>: <%= @user.health_fund %></p>
+<p><strong>Surgeon</strong>: <%= @user.surgeon %></p>
+<p><strong>Surgery Date</strong>: <%= @user.surgery_date %></p>
+<p><strong>Delivery Date</strong>: <%= @user.delivery_date %></p>
+<p><strong>Any Health Issues</strong>: <%= @user.health_problems %></p>
+<p><strong>Card Details</strong>: <%= @user.card_payment %></p>
+<p><strong>Card Verified</strong>: <%= @user.card_verified %></p>

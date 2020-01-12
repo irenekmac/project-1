@@ -1,2 +1,81 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h2>Edit Account</h2>
+
+<%= form_for @user do |f| %>
+
+<%= f.label :user_type %>
+<%= f.password_field :user_type %> *drowdown?
+<br>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+
+<%= f.label :date_of_birth %>
+<%= f.text_field :dob %> (yyyy/mm/dd)
+<br>
+
+<%= f.label :contact_number %>
+<%= f.text_field :contact %>
+<br>
+
+<%= f.label :email %>
+<%= f.text_field :email %>
+<br>
+
+<%= f.label :height %>
+<%= f.text_field :height %> (cm)
+<br>
+
+<%= f.label :weight %>
+<%= f.text_field :weight %> (kg)
+<br>
+
+<%= f.label :surgeon %>
+<%= f.text_field :surgeon %>
+<br>
+
+<%= f.label :surgery_date %>
+<%= f.text_field :surgery_date %> (yyyy/mm/dd)
+<br>
+
+<%= f.label :delivery_date %>
+<%= f.text_field :delivery_date %> (yyyy/mm/dd)
+<br>
+
+<%= f.label :health_fund %>
+<%= f.text_field :health_fund %>
+<br>
+
+<%= f.label :time_of_posturing %>
+<%= f.text_field :time_of_posturing %> (days) *i think this should be a drop-down
+<br>
+
+<%= f.label :address %>
+<%= f.password_field :address %>
+<br>
+
+<%= f.label :state %>
+<%= f.password_field :state %> *drowdown?
+<br>
+
+<%= f.label :any_health_problems? %>
+<%= f.text_field :health_problems %>
+<br>
+
+<%= f.label :card_payment %>
+<%= f.password_field :pcard_payment %>
+<br>
+
+
+<%= f.label :password %>
+<%= f.password_field :password %>
+<br>
+
+
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %>
+<br>
+
+<%= f.submit 'Submit' %>
+
+<% end %>
