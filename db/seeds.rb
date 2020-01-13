@@ -5,3 +5,12 @@ u2 = User.create! name: 'Theo Kav', dob: '1965/01/21', contact: '0432123911', em
 u3 = User.create! name: 'Ian Wise', dob: '1965/07/03', contact: '0445232547', email: 'ian@ga.co', height: 157, weight: 50, surgeon: 'none',  surgery_date: '2020/03/20', delivery_date: '2020/03/18', health_fund: 'AHM', time_of_posturing: 7, address: '22 Ress Rd Surry', health_problems: 'none', card_payment: '0987654321239874', card_verified: true, password: 'chicken', user_type: 1, state: 2
 
 puts 'Created #{User.count} users.'
+
+
+Order.destroy_all
+
+o1 = Order.create! item_size: 'Large', patient_id: '', technician_id:'', status: 0
+o2 = Order.create! item_size: 'Regular', patient_id: '', technician_id:'', status: 2
+o3 = Order.create! item_size: 'Regular', patient_id: '', technician_id:'', status: 3
+
+puts 'Created #{Order.count} orders.'

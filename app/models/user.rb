@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+  belongs_to :orders, optional: true
+
   has_secure_password
 
   enum user_type: [:patient, :technician, :admin]
