@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
-  # # Certain pages are visible only to logged-in users:
-  # before_action :check_if_logged_in, except: [:new]
-  #
-  # # Lock down admin pages
-  # before_action :check_if_admin, only: [:index]
+  # Certain pages are visible only to logged-in users:
+  before_action :check_if_logged_in, except: [:new, :create]
+
+  # Lock down admin pages
+  before_action :check_if_admin, only: [:index]
 
   def new
     @user = User.new
@@ -33,17 +33,23 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find params[:id]
+
+    redirect_to users_path
   end
 
   def update
   end
 
   def destroy
+    User.destroy params[:id]
+
+   redirect_to users_path
   end
 
   private
   def user_params
-    params.require(:user).permit( :name, :email, :password, :password_confirmation)
+    params.require(:user).permit( :name, :dob, :contact, :email, :password, :password_confirmation, :height, :weight, :surgery_date, :delivery_date, :time_of_posturing, :address, :state, :card_payment, :user_type)
   end
 
 end

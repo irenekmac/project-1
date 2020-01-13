@@ -1,0 +1,95 @@
+<%= form_for @user do |f| %>
+
+<%= f.label :user_type %>
+<br>
+<%= f.select :user_type, User.user_types.keys.to_a %>
+<br>
+
+<%= f.label :name %>
+<br>
+<%= f.text_field :name %>
+<br>
+
+<%= f.label :date_of_birth %>
+<br>
+<%= f.text_field :dob %> (yyyy/mm/dd)
+<br>
+
+<%= f.label :contact_number %>
+<br>
+<%= f.text_field :contact %>
+<br>
+
+<%= f.label :email %>
+<br>
+<%= f.text_field :email %>
+<br>
+
+<%= f.label :password %>
+<br>
+<%= f.password_field :password %>
+<br>
+
+<%= f.label :password_confirmation %>
+<br>
+<%= f.password_field :password_confirmation %>
+<br>
+
+<%= f.label :height %>
+<br>
+<%= f.text_field :height %> (cm)
+<br>
+
+<%= f.label :weight %>
+<br>
+<%= f.text_field :weight %> (kg)
+<br>
+
+<%= f.label :surgeon %>
+<br>
+<%= f.text_field :surgeon %>
+<br>
+
+<%= f.label :surgery_date %>
+<br>
+<%= f.text_field :surgery_date %> (yyyy/mm/dd)
+<br>
+
+<%= f.label :delivery_date %>
+<br>
+<%= f.text_field :delivery_date %> (yyyy/mm/dd)
+<br>
+
+<%= f.label :health_fund %>
+<br>
+<%= f.text_field :health_fund %>
+<br>
+
+<%= f.label :time_of_posturing %>
+<br>
+<%= f.select :time_of_posturing, ['Please select','3-5 days', '1 week', '10 days', '2 weeks', '3 weeks', '4 weeks' ] %>
+<br>
+
+<%= f.label :address %>
+<br>
+<%= f.text_field :address %>
+<br>
+
+<%= f.label :state %>
+<br>
+<%= f.select :state, User.states.keys.to_a %>
+<br>
+
+<%= f.label :any_health_problems? %>
+<br>
+<%= f.text_field :health_problems %>
+<br>
+
+<%= f.label :card_payment %>
+<br>
+<%= f.text_field :card_payment %>
+<br>
+
+<%= f.submit 'Submit' %>
+
+<% end %>
