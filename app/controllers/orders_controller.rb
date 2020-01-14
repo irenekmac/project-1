@@ -4,7 +4,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @current_user.patient_orders.create order_params, status: 'pending'
+    # only patients can create orders and patients
+    # when order is created the status field automatically sets to 'quoted'
+    @current_user.patient_orders.create order_params, status: 'quoted'
+
     redirect_to orders_path
 
   end
@@ -18,8 +21,9 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    # Only admin and technician can edit orders
     @order = Order.find params[:id]
-    check_ownership
+    # check_ownership
 
   end
 

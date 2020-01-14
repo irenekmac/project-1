@@ -3,8 +3,11 @@
 <%= form_for @order do |f| %>
 
   <%= f.label :equipment_size %>
+  <br>
   <%= f.text_field :item_size %>
 
   <%= f.submit %>
 
 <% end %>
+
+<p>Maybe add time of posturing in order model: date of surgery, delivery date and delivery address</p>

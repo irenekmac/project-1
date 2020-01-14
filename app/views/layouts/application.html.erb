@@ -20,6 +20,17 @@
           Welcome, <%= @current_user.name %>
           <% if @current_user.admin? %>
           (admin)
+          |
+          <%= link_to 'Users', users_path %>
+          |
+          <%= link_to 'Orders', orders_path %>
+
+          <% end %>
+
+          <% if @current_user.technician? %>
+          (technician)
+          |
+          <%= link_to 'Orders', orders_path %>
           <% end %>
           |
           <%= link_to 'Create Order', new_order_path %>
