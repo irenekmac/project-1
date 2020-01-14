@@ -1,2 +1,10 @@
-<h1>Orders#edit</h1>
-<p>Find me in app/views/orders/edit.html.erb</p>
+<h1>Edit Order</h1>
+
+<%= form_for @order do |f| %>
+
+  <%= f.label :equipment_size %>
+  <%= f.text_field :item_size %>
+
+  <%= f.submit %>
+
+<% end %>

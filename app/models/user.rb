@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
-  belongs_to :orders, optional: true
+  has_many :assigned_orders, class_name: 'Order', foreign_key: 'technician_id'
+  has_many :submitted_orders, class_name: 'Order', foreign_key: 'patient_id'
 
   has_secure_password
 

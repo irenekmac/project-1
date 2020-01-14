@@ -1,6 +1,8 @@
 class Order < ApplicationRecord
 
-  has_many :users
+  belongs_to :patient, class_name: 'User', optional: true
+  belongs_to :technician, class_name: 'User', optional: true
+
 
   # enum item_size: [:regular, :large]
 
