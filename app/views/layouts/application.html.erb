@@ -32,6 +32,12 @@
           |
           <%= link_to 'Orders', orders_path %>
           <% end %>
+
+          <% if @current_user.patient? %>
+          (patient)
+          |
+          <%= link_to 'Order Info', order_path %>
+          <% end %>
           |
           <%= link_to 'Create Order', new_order_path %>
           |

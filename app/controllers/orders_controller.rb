@@ -13,7 +13,11 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all
+    # @orders = Order.all
+
+    @unassigned_orders = Order.where technician_id:nil
+
+    @current_technician = Order.where technician_id: @current_user.id
   end
 
   def show
