@@ -14,3 +14,18 @@
 
 <% end %>
 </ul>
+
+<ul>
+  <% @current_technician.each do |order| %>
+  <li>
+    <%= link_to " Order number #{order.id}", order_path(order.id) %>
+
+
+    <!-- You only see an edit link for orders created -->
+    <% if order.id == @current_user %>
+    (<%= link_to 'edit', edit_order_path(order.id) %>)
+  <% end %>
+</li>
+
+<% end %>
+</ul>

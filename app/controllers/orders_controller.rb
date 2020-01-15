@@ -6,7 +6,8 @@ class OrdersController < ApplicationController
   def create
     # only patients can create orders and patients
     # when order is created the status field automatically sets to 'quoted'
-    @current_user.patient_orders.create order_params, status: 'quoted'
+    @current_user.submitted_orders.create order_params
+    # , status: 'quoted'
 
     redirect_to orders_path
 
@@ -34,21 +35,28 @@ class OrdersController < ApplicationController
   def update
 
     @order = Order.find params[:id]
+    @order.update order_params
+
+
 
     # Do update here
-    redirect_to login_path and return unless @order.user == @current_user
+    redirect_to login_path
+    # and return unless @order.patient == @current_user
 
     puts "~~~~~~~~~~~~~~~~ ORDER UPDATED ~~~~~~~~~~~~~~~~"
 
   end
 
   def destroy
+    Order.destroy params[:id]
+
+    redirect_to orders_path
   end
 
   private
 
   def order_params
-    params.require(:order).permit( :item_size )
+    params.require(:order).permit( :item_size, :surgeon, :surgery_date, :delivery_date, :health_fund, :time_of_posturing, :health_problems )
   end
 
   def check_ownership

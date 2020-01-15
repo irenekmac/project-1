@@ -36,7 +36,7 @@
           <% if @current_user.patient? %>
           (patient)
           |
-          <%= link_to 'Order Info', order_path %>
+          <%= link_to 'Order Info', orders_path %>
           <% end %>
           |
           <%= link_to 'Create Order', new_order_path %>
