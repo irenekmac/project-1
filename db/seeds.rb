@@ -23,3 +23,11 @@ o2 = Order.create! item_size: 'Regular', patient_id: u4.id, technician_id: u5.id
 o3 = Order.create! item_size: 'Regular', patient_id: u6.id, technician_id: u5.id, status: 'delivered', health_problems: 'none', time_of_posturing: 8, health_fund: 'Bupa', surgery_date: '2020/02/20', delivery_date: '2020/02/19'
 
 puts "Created #{Order.count} orders."
+
+Comment.destroy_all
+
+c1 = Comment.create! order_id: o1.id, comment: 'how do i use the bed piece?'
+c2 = Comment.create! order_id: o2.id, comment: 'equipment is ready for pick up soon?'
+c3 = Comment.create! order_id: o3.id, comment: 'can I request to keep the equipment for another week?'
+
+puts "Created #{Comment.count} comments."

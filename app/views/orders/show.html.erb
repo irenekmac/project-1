@@ -15,3 +15,27 @@
 <p><strong>Surgery Date</strong>: <%= @order.surgery_date %></p>
 <p><strong>Delivery Date</strong>: <%= @order.delivery_date %></p>
 <p><strong>Any Health Issues</strong>: <%= @order.health_problems %></p>
+
+<!-- comments section -->
+
+<%= form_for @comment do |f| %>
+
+<%= f.label :feedback %>
+<br>
+<%= f.text_field :comment %>
+<br>
+
+<%= f.hidden_field :order_id, :value => @order.id%>
+
+<%= f.submit 'Submit' %>
+
+<% end %>
+
+
+<% @order.comments.each do |c| %>
+
+<li>
+  <%= c.comment %>
+</li>
+
+<% end %>

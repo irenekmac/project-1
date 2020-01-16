@@ -24,6 +24,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find params[:id]
+
+    @comment = Comment.new
   end
 
   def edit
@@ -37,8 +39,6 @@ class OrdersController < ApplicationController
 
     @order = Order.find params[:id]
     @order.update order_params
-
-
 
     # Do update here
     redirect_to login_path
