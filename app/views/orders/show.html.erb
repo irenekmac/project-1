@@ -7,8 +7,8 @@
 <% if @current_user.technician? %> <!-- only technician users can see this button -->
 
   <% if @unassigned_orders %> <!-- this button only appears if the technician_id:'nil' -->
-  |
-  <%= button_to 'Accept Order', order_accept_path(@order.id) %>
+    |
+    <%= button_to 'Accept Order', order_accept_path(@order.id) %>
   <% end %>
 
   <% end %>
@@ -30,9 +30,11 @@
 
 <% end %>
 
-<div class="commentSection">
+
 
 <!-- comments section -->
+
+<div class="commentSection">
 
 <%= form_for @comment do |f| %>
 
