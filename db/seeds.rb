@@ -21,6 +21,7 @@ Order.destroy_all
 o1 = Order.create! item_size: 'Large', patient_id: u1.id, technician_id: u3.id, status: 'quoted', health_problems: 'none', time_of_posturing: 6, health_fund: 'AHM', surgery_date: '2020/03/13', delivery_date: '2020/03/12'
 o2 = Order.create! item_size: 'Regular', patient_id: u4.id, technician_id: u5.id, status: 'pending_delivery', health_problems: 'none', time_of_posturing: 7, health_fund: 'HCF', surgery_date: '2020/05/20', delivery_date: '2020/05/22'
 o3 = Order.create! item_size: 'Regular', patient_id: u6.id, technician_id: u5.id, status: 'delivered', health_problems: 'none', time_of_posturing: 8, health_fund: 'Bupa', surgery_date: '2020/02/20', delivery_date: '2020/02/19'
+o4 = Order.create! item_size: 'Regular', patient_id: u6.id, technician_id: nil, status: 'quoted', health_problems: 'none', time_of_posturing: 8, health_fund: 'Bupa', surgery_date: '2020/02/20', delivery_date: '2020/02/19'
 
 puts "Created #{Order.count} orders."
 

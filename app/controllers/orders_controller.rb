@@ -1,4 +1,11 @@
 class OrdersController < ApplicationController
+
+  def accept
+    order = Order.find params[:id]
+    order.update technician_id:@current_user.id
+
+  end
+
   def new
     @order = Order.new
   end
@@ -15,15 +22,17 @@ class OrdersController < ApplicationController
 
   def index
     # only admin can see all orders
-    @orders = Order.all
+    # @orders = Order.all
 
     @unassigned_orders = Order.where technician_id:nil
 
-    @current_technician = Order.where technician_id: @current_user.id
+    # @current_technician = Order.where technician_id: @current_user.id
   end
 
   def show
     @order = Order.find params[:id]
+
+    @unassigned_orders = Order.where technician_id:nil
 
     @comment = Comment.new
   end
@@ -57,7 +66,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit( :item_size, :surgeon, :surgery_date, :delivery_date, :health_fund, :time_of_posturing, :health_problems )
+    params.require(:order).permit( :item_size, :surgeon, :surgery_date, :delivery_date, :health_fund, :time_of_posturing, :health_problems, :status )
   end
 
   def check_ownership

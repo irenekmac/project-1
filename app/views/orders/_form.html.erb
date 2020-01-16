@@ -36,6 +36,15 @@
   <%= f.text_field :health_problems %>
   <br>
 
+  <% if @current_user.technician? %>
+
+  <%= f.label :status %>
+  <br>
+  <%= f.select :status, Order.statuses.keys.to_a %> 
+  <br>
+
+  <% end %>
+
   <%= f.submit %>
 
 <% end %>

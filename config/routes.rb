@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   post '/login' => 'session#create' #form submit, check credentials, create session
   delete '/login' => 'session#destroy' #logout (delete session)
 
+
+  post '/orders/:id/accept' => 'orders#accept', as:'order_accept' #
+
   resources :users
 
   resources :orders

@@ -4,6 +4,14 @@
 |
 <%= link_to 'Delete Order', order_path(@order.id), method: 'delete' %>
 
+<% if @current_user.technician? %> <!-- only technician users can see this button -->
+
+  <% if @unassigned_orders %> <!-- this button only appears if the technician_id:'nil' -->
+  |
+  <%= button_to 'Accept Order', order_accept_path(@order.id) %>
+  <% end %>
+
+<% end %>
 
 <p><strong>Patient ID</strong>: <%= @order.patient_id %></p>
 <p><strong>Technician ID</strong>: <%= @order.technician_id %></p>
@@ -37,5 +45,8 @@
 <li>
   <%= c.comment %>
 </li>
+
+<%= link_to 'Delete', comment_path(c.id), method: 'delete' %>
+
 
 <% end %>

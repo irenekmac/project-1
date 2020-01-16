@@ -31,11 +31,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @order = Order.destroy params[:id]
-    @comment = @order.comments.find params[:id]
+    comment = Comment.find params[:id]
+    comment.destroy
 
-    @comment.destroy
-    redirect_to order_path(@order)
+    redirect_to order_path(comment.order.id)
   end
 
 end

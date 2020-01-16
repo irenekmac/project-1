@@ -1,20 +1,11 @@
 
 <h2>Your Orders</h2>
 
-<!-- this can only be seen by admin users -->
-<ul>
-  <% @orders.each do |order| %>
-  <li>
-    <!-- loop lists all the orders and gives ea order a link, when clicked it
-    sends you to the show page that lists the orders' db info -->
-    <%= link_to order.status, order_path(order.id) %>
-  </li>
-  <% end %>
-</ul>
 
 <!-- this is a list of links to patient orders that are not yet assigned to a technician,
   can only be seen by technicians and admin so they may assign themselves to a order. -->
 
+<h3>Unassigned Orders</h3>
 <ul>
   <% @unassigned_orders.each do |order| %>
   <li>
@@ -32,8 +23,9 @@
 
 <!-- this list can be seen by the patient who made the order -->
 
+<h3>Orders Assigned To You</h3>
 <ul>
-  <% @current_technician.each do |order| %>
+  <% @current_user.assigned_orders.each do |order| %>
   <li>
     <%= link_to " Order number #{order.id}", order_path(order.id) %>
 
