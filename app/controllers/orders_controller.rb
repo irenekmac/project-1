@@ -14,7 +14,8 @@ class OrdersController < ApplicationController
   end
 
   def index
-    # @orders = Order.all
+    # only admin can see all orders
+    @orders = Order.all
 
     @unassigned_orders = Order.where technician_id:nil
 
