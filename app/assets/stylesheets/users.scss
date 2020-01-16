@@ -1,5 +1,7 @@
 * {
   font-family: 'Noto Sans', sans-serif;
+  text-decoration: none;
+  color: black;
 }
 
 .field_with_errors input {
@@ -18,36 +20,12 @@ from.new_user, form.edit_user label {
   margin-right: 8px;
 }
 
-.login-h2 {
-  text-align: center;
+
+
+li {
+  text-decoration: none;
 }
 
-.login-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-form-email input, .login-form-pw input {
-
-  border-radius: 5px;
-  line-height: 22px;
-  width: 12em;
-
-}
-
-.login-form-submit input{
-
-  display: inline-block;
-  padding: 4px 14px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 22px;
-  width: 10em;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-color: #144a75;
-  border-radius: 4px;
-
+li :hover{
+  background-color: e4e932;
 }

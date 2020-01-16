@@ -50,7 +50,7 @@ class OrdersController < ApplicationController
     @order.update order_params
 
     # Do update here
-    redirect_to login_path
+    redirect_to orders_path
     # and return unless @order.patient == @current_user
 
     puts "~~~~~~~~~~~~~~~~ ORDER UPDATED ~~~~~~~~~~~~~~~~"

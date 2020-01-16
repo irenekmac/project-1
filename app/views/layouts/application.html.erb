@@ -15,9 +15,10 @@
     <h1>Vitrectomy Hire</h1>
 
     <header>
-      <nav>
+      <nav class="mainNavBar">
         <% if @current_user.present? %>
           Welcome, <%= @current_user.name %>
+
           <% if @current_user.admin? %>
           (admin)
           |
@@ -37,9 +38,9 @@
           (patient)
           |
           <%= link_to 'Order Info', orders_path %>
-          <% end %>
           |
           <%= link_to 'Create Order', new_order_path %>
+          <% end %>
           |
           <%= link_to 'Logout', login_path, method: 'delete' %>
         <% else %>
@@ -49,6 +50,7 @@
 
         <% end %>
       </nav>
+
       <hr>
     </header>
 
