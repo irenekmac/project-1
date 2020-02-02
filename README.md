@@ -1,24 +1,18 @@
-# README
+# Vitrectomy Hire Service Web App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is based off a proposed solution to a real life problem that my previous workplace faced.
 
-Things you may want to cover:
+Solution being to automate the sales process for better accessibility to clients. Minimising human error in gathering client details and making the sales process, faster and more efficient.
 
-* Ruby version
+## Deployment
 
-* System dependencies
+I used heroku to deploy: [Vitrectomy Website](https://rails-heroku-vitrectomyhire.herokuapp.com/)
 
-* Configuration
+### Things to edit:
+* Psuedo code
+* CSS for styling
 
-* Database creation
+## Things to add in the future:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* integrate with CRM system
+* notify technicians of clients who make a request - automate if client.state == technician.state
