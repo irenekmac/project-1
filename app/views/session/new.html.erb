@@ -11,11 +11,11 @@
 
   <!-- Email -->
   <%= label_tag :email %>
-  <%= email_field_tag :email, nil, :class => "form-control mb-4", :placeholder => 'ian@test.co' %>
+  <%= email_field_tag :email, 'ian@test.co', :class => "form-control mb-4" %>
 
   <!-- Password -->
   <%= label_tag :password %>
-  <%= password_field_tag :password, nil, :class => "form-control mb-4", :placeholder => 'chicken' %>
+  <%= password_field_tag :password, 'chicken', :class => "form-control mb-4" %>
 
   <!-- Login button -->
   <%= submit_tag "Log In", :class => "btn btn-info btn-block my-4" %>
