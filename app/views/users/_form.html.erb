@@ -1,65 +1,66 @@
 <%= form_for @user do |f| %>
 
-<%= f.label :user_type %>
-<br>
-<%= f.select :user_type, User.user_types.keys.to_a %>
-<br>
+  <div class="form-group">
+    <%= f.label :user_type, :for => "exampleFormControlSelect1" %>
+    <%= f.select :user_type, User.user_types.keys.to_a, :class => "form-control"%>
+  </div>
 
-<%= f.label :name %>
-<br>
-<%= f.text_field :name %>
-<br>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class => "form-control mb-4" %>
+  </div>
 
-<%= f.label :date_of_birth %>
-<br>
-<%= f.text_field :dob %> (yyyy/mm/dd)
-<br>
+  <div class="form-group">
+    <%= f.label :date_of_birth %>
+    <%= f.text_field :dob %> (yyyy/mm/dd)
+  </div>
 
-<%= f.label :contact_number %>
-<br>
-<%= f.text_field :contact %>
-<br>
+  <div class="form-group">
+    <%= f.label :contact_number %>
+    <%= f.text_field :contact, :class => "form-control mb-4" %>
+  </div>
 
-<%= f.label :email %>
-<br>
-<%= f.text_field :email %>
-<br>
+  <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email, :type => "exampleInputEmail1", :class => "form-control" %>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
 
-<%= f.label :password %>
-<br>
-<%= f.password_field :password %>
-<br>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => "form-control mb-4" %>
+  </div>
 
-<%= f.label :password_confirmation %>
-<br>
-<%= f.password_field :password_confirmation %>
-<br>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :class => "form-control mb-4" %>
+  </div>
 
-<%= f.label :height %>
-<br>
-<%= f.text_field :height %> (cm)
-<br>
+  <div class="form-group">
+    <%= f.label :height %>
+    <%= f.text_field :height, :class => "form-control mb-4" %> (cm)
+  </div>
 
-<%= f.label :weight %>
-<br>
-<%= f.text_field :weight %> (kg)
-<br>
+  <div class="form-group">
+    <%= f.label :weight %>
+    <%= f.text_field :weight, :class => "form-control mb-4" %> (kg)
+  </div>
 
-<%= f.label :address %>
-<br>
-<%= f.text_field :address %>
-<br>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, :class => "form-control mb-4" %>
+  </div>
 
-<%= f.label :state %>
-<br>
-<%= f.select :state, User.states.keys.to_a %>
-<br>
+  <div class="form-group">
+    <%= f.label :state %>
+    <%= f.select :state, User.states.keys.to_a %>
+  </div>
 
-<%= f.label :card_payment %>
-<br>
-<%= f.text_field :card_payment %>
-<br>
+  <div class="form-group">
+    <%= f.label :card_payment %>
+    <%= f.text_field :card_payment, :class => "form-control mb-4" %>
+  </div>
 
-<%= f.submit 'Submit' %>
+  <%= f.submit 'Submit', :class => "btn btn-primary" %>
 
 <% end %>
