@@ -35,8 +35,6 @@
     <% end %>
 
     <!-- comments section -->
-    <div class="container">
-      <div class="post-comments">
 
         <%= form_for @comment do |f| %>
 
@@ -52,28 +50,15 @@
         <% end %>
 
         <!-- Messages/Comments -->
+        <% @order.comments.each do |c| %>
 
-        <div class="row">
-          <div class="media">
-            <!-- first comment -->
-            <% @order.comments.each do |c| %>
+        <li class="listedComment">
+          <%= c.comment %>
+        </li>
 
-            <li class="listedComment">
-              <%= c.comment %>
-            </li>
+          <%= link_to 'Delete', comment_path(c.id), method: 'delete', :class => "comment-meta" %>
 
-            <div class="comment-meta">
-              <%= link_to 'Delete', comment_path(c.id), method: 'delete', :class => "comment-meta" %>
-
-            </div> <!-- comment-meta -->
-
-
-
-            <% end %>
-
-      </div> <!-- post-comments -->
-
-    </div> <!-- container -->
+        <% end %>
 
   </div> <!-- card body -->
 
