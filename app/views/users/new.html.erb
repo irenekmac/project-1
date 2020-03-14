@@ -1,14 +1,20 @@
-<h2>Create New Account</h2>
+<div class="card">
+  <div class="card-body">
 
-<% if @user.errors.any? %>
-<p>Please correct the following errors:</p>
-<ul>
-  <% @user.errors.full_messages.each do |e| %>
+    <h2 class="card-title text-center">Create New Account</h2>
 
-  <li><%= e %></li>
-  
-  <% end %>
-</ul>
-  <% end %>
+  <% if @user.errors.any? %>
+  <p>Please correct the following errors:</p>
+  <ul>
+    <% @user.errors.full_messages.each do |e| %>
 
-<%= render partial: 'form' %>
+    <li><%= e %></li>
+
+    <% end %>
+  </ul>
+    <% end %>
+
+  <%= render partial: 'form' %>
+</div>
+
+</div>

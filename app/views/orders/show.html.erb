@@ -33,39 +33,48 @@
     <% end %>
 
     <% end %>
-  </div>
 
-</div>
+    <!-- comments section -->
+    <div class="container">
+      <div class="post-comments">
+
+        <%= form_for @comment do |f| %>
+
+        <%= f.label :Messages, :for => "comment" %>
+        <br>
+        <%= f.text_area :comment, :class => "form-control", :rows => "3" %>
+        <br>
+
+        <%= f.hidden_field :order_id, :value => @order.id%>
+
+        <%= f.submit 'Submit', :class => "btn btn-primary" %>
+
+        <% end %>
+
+        <!-- Messages/Comments -->
+
+        <div class="row">
+          <div class="media">
+            <!-- first comment -->
+            <% @order.comments.each do |c| %>
+
+            <li class="listedComment">
+              <%= c.comment %>
+            </li>
+
+            <div class="comment-meta">
+              <%= link_to 'Delete', comment_path(c.id), method: 'delete', :class => "comment-meta" %>
+
+            </div> <!-- comment-meta -->
 
 
-<!-- comments section -->
 
-<div class="commentContainer">
+            <% end %>
 
-<%= form_for @comment do |f| %>
+      </div> <!-- post-comments -->
 
-<%= f.label :feedback %>
-<br>
-<%= f.text_field :comment %>
-<br>
+    </div> <!-- container -->
 
-<%= f.hidden_field :order_id, :value => @order.id%>
+  </div> <!-- card body -->
 
-<%= f.submit 'Submit' %>
-
-<% end %>
-
-
-<% @order.comments.each do |c| %>
-
-<li class="listedComment">
-  <%= c.comment %>
-</li>
-
-<%= link_to 'Delete', comment_path(c.id), method: 'delete' %>
-
-
-<% end %>
-
-
-</div> <!-- commentContainer -->
+</div> <!-- card -->
