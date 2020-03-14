@@ -1,51 +1,51 @@
 <%= form_for @order do |f| %>
 
+  <div class="form-group">
   <%= f.hidden_field :status, value: 'quoted' %>
-  <%= f.label :equipment_size %>
-  <br>
-  <%= f.text_field :item_size %>
-  <br>
+    <%= f.label :equipment_size %>
+    <%= f.text_field :item_size, :class => "form-control" %>
+  </div>
 
-  <%= f.label :surgeon %>
-  <br>
-  <%= f.text_field :surgeon %>
-  <br>
+  <div class="form-group">
+    <%= f.label :surgeon %>
+    <%= f.text_field :surgeon, :class => "form-control" %>
+  </div>
 
-  <%= f.label :surgery_date %>
-  <br>
-  <%= f.text_field :surgery_date %> (yyyy/mm/dd)
-  <br>
+  <div class="form-group">
+    <%= f.label :surgery_date %>
+    <%= f.text_field :surgery_date, :class => "form-control" %> (yyyy/mm/dd)
+  </div>
 
-  <%= f.label :delivery_date %>
-  <br>
-  <%= f.text_field :delivery_date %> (yyyy/mm/dd)
-  <br>
+  <div class="form-group">
+    <%= f.label :delivery_date %>
+    <%= f.text_field :delivery_date, :class => "form-control" %> (yyyy/mm/dd)
+  </div>
 
-  <%= f.label :health_fund %>
-  <br>
-  <%= f.text_field :health_fund %>
-  <br>
+  <div class="form-group">
+    <%= f.label :health_fund %>
+    <%= f.text_field :health_fund, :class => "form-control" %>
+  </div>
 
-  <%= f.label :time_of_posturing %>
-  <br>
-  <%= f.select :time_of_posturing, ['Please select','3-5 days', '1 week', '10 days', '2 weeks', '3 weeks', '4 weeks' ] %>
-  <br>
+  <div class="form-group">
+    <%= f.label :time_of_posturing %>
+    <%= f.select :time_of_posturing, ['Please select','3-5 days', '1 week', '10 days', '2 weeks', '3 weeks', '4 weeks' ], :class => "form-control" %>
+  </div>
 
-  <%= f.label :any_health_problems? %>
-  <br>
-  <%= f.text_field :health_problems %>
-  <br>
+  <div class="form-group">
+    <%= f.label :any_health_problems? %>
+    <%= f.text_field :health_problems, :class => "form-control" %>
+  </div>
 
   <% if @current_user.technician? %>
 
-  <%= f.label :status %>
-  <br>
-  <%= f.select :status, Order.statuses.keys.to_a %>
-  <br>
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.select :status, Order.statuses.keys.to_a, :class => "form-control" %>
+  </div>
 
 
   <% end %>
 
-  <%= f.submit %>
+  <%= f.submit 'Submit', :class => "btn btn-info btn-block my-4" %>
 
 <% end %>

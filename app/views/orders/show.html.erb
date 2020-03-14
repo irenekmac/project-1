@@ -1,35 +1,41 @@
-<h1> Order Details </h1>
+<div class="card">
+  <div class="card-body">
 
-<%= link_to 'Edit Order', edit_order_path(@order.id) %>
-|
-<%= link_to 'Delete Order', order_path(@order.id), method: 'delete' %>
+    <h2 class="card-title"> Order Details </h2>
+    <div class="card-link">
+      <%= link_to 'Edit Order', edit_order_path(@order.id) %>
+      |
+      <%= link_to 'Delete Order', order_path(@order.id), method: 'delete' %>
+    </div>
 
-<% if @current_user.technician? %> <!-- only technician users can see this button -->
 
-  <% if @unassigned_orders %> <!-- this button only appears if the technician_id:'nil' -->
-    |
-    <%= button_to 'Accept Order', order_accept_path(@order.id) %>
-  <% end %>
+    <p><strong>Patient ID</strong>: <%= @order.patient_id %></p>
+    <p><strong>Technician ID</strong>: <%= @order.technician_id %></p>
+    <p><strong>Item Size</strong>: <%= @order.item_size %></p>
+    <p><strong>Order Status</strong>: <%= @order.status %></p>
+    <p><strong>Time of Posturing</strong>: <%= @order.time_of_posturing %></p>
+    <p><strong>Health Fund</strong>: <%= @order.health_fund %></p>
+    <p><strong>Surgeon</strong>: <%= @order.surgeon %></p>
+    <p><strong>Surgery Date</strong>: <%= @order.surgery_date %></p>
+    <p><strong>Delivery Date</strong>: <%= @order.delivery_date %></p>
+    <p><strong>Any Health Issues</strong>: <%= @order.health_problems %></p>
 
-  <% end %>
+    <% if @current_user.technician?%>
 
-<p><strong>Patient ID</strong>: <%= @order.patient_id %></p>
-<p><strong>Technician ID</strong>: <%= @order.technician_id %></p>
-<p><strong>Item Size</strong>: <%= @order.item_size %></p>
-<p><strong>Order Status</strong>: <%= @order.status %></p>
-<p><strong>Time of Posturing</strong>: <%= @order.time_of_posturing %></p>
-<p><strong>Health Fund</strong>: <%= @order.health_fund %></p>
-<p><strong>Surgeon</strong>: <%= @order.surgeon %></p>
-<p><strong>Surgery Date</strong>: <%= @order.surgery_date %></p>
-<p><strong>Delivery Date</strong>: <%= @order.delivery_date %></p>
-<p><strong>Any Health Issues</strong>: <%= @order.health_problems %></p>
+    <p><strong>Order Status</strong>: <%= @order.status %></p>
 
-<% if @current_user.technician?%>
+    <% end %>
 
-<p><strong>Order Status</strong>: <%= @order.status %></p>
+    <% if @current_user.technician? %> <!-- only technician users can see this button -->
 
-<% end %>
+    <% if @unassigned_orders %> <!-- this button only appears if the technician_id:'nil' -->
+    <%= button_to 'Accept this Order', order_accept_path(@order.id), :class => "btn btn-outline-primary btn-block my-4" %>
+    <% end %>
 
+    <% end %>
+  </div>
+
+</div>
 
 
 <!-- comments section -->
